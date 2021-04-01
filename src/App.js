@@ -1,25 +1,43 @@
-import logo from './logo.svg';
-import './App.css';
 
-function App() {
+import React, { useState, useEffect, useRef } from 'react';
+import './App.css';
+import { Draggable } from './CustomHooks/useDraggable/useDraggable';
+
+
+
+
+const App = () => {
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+
+    <div className="container" >
+      <Draggable vertical>
+        <div className="wrapper" >
+          <span>vertical</span>
+          <button onMouseDown={(e) => console.log('hello')}>-</button>
+          <span>1</span>
+          <button>+</button>
+        </div>
+      </Draggable>
+      <Draggable horizontal>
+        <div className="wrapper" >
+          <span>horizontal</span>
+          <button onMouseDown={(e) => console.log('hello')}>-</button>
+          <span>1</span>
+          <button>+</button>
+        </div>
+      </Draggable>
+      <Draggable>
+        <div className="wrapper" >
+          <span>360</span>
+          <button onMouseDown={(e) => console.log('hello')}>-</button>
+          <span>1</span>
+          <button>+</button>
+        </div>
+      </Draggable>
     </div>
-  );
+  )
 }
+
 
 export default App;
